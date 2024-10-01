@@ -7,6 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Domain", "M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Application", "MouseProcessing.Application\MouseProcessing.Application.csproj", "{B8D60E72-527C-4AF1-9360-4C5B62CD9215}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Infrastructure", "MouseProcessing.Infrastructure\MouseProcessing.Infrastructure.csproj", "{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1A0F9BB-DA70-4A7C-A38D-AC050C0DE9DE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +28,10 @@ Global
 		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,19 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MouseProcessing.Domain.Abstractions;
 using MouseProcessing.Domain.Entities;
-using MouseProcessing.API.Dtos;
-using MouseProcessing.API.Mappers;
 using MouseProcessing.Domain.BaseTypes;
+using MouseProcessing.API.Dtos;
 
 namespace MouseProcessing.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]/[action]")]
-    public class ContactsController : ControllerBase
+    public class CursorInfosController : ControllerBase
     {
         private readonly ICursorInfoService _service;
         private readonly IMapper<CursorInfo, CursorInfoCreateDto> _cursorInfoCreateDtoMapper;
-        public ContactsController(ICursorInfoService service, IMapper<CursorInfo, CursorInfoCreateDto> cursorInfoCreateDtoMapper)
+        public CursorInfosController(ICursorInfoService service, IMapper<CursorInfo, CursorInfoCreateDto> cursorInfoCreateDtoMapper)
         {
             _service = service;
             _cursorInfoCreateDtoMapper = cursorInfoCreateDtoMapper;

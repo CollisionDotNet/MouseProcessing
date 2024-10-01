@@ -6,6 +6,8 @@ using MouseProcessing.Application.Services;
 using MouseProcessing.Infrastructure.Entities;
 using MouseProcessing.Infrastructure.Mappers;
 using MouseProcessing.Infrastructure.Repositories;
+using MouseProcessing.API.Mappers;
+using MouseProcessing.API.Dtos;
 
 namespace MouseProcessing.API
 {
@@ -23,6 +25,7 @@ namespace MouseProcessing.API
             builder.Services.AddScoped<ICursorInfoService, CursorInfoService>();
             builder.Services.AddScoped<ICursorInfoRepository, EFCursorInfoRepository>();
             builder.Services.AddScoped<IMapper<CursorInfo, CursorInfoEntity>, CursorInfoEntityMapper>();
+            builder.Services.AddScoped<IMapper<CursorInfo, CursorInfoCreateDto>, CursorInfoCreateDtoMapper>();
 
             var app = builder.Build();
 

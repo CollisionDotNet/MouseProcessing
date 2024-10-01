@@ -1,5 +1,4 @@
-﻿
-namespace MouseProcessing.Domain.BaseTypes
+﻿namespace MouseProcessing.Domain.BaseTypes
 {
     public interface IEntity
     {

@@ -1,10 +1,5 @@
 ﻿using MouseProcessing.Domain.Abstractions;
 using MouseProcessing.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MouseProcessing.Application.Services
 {

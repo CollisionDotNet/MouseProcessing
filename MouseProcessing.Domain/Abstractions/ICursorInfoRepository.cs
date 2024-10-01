@@ -1,4 +1,5 @@
 ﻿using MouseProcessing.Domain.Entities;
+
 namespace MouseProcessing.Domain.Abstractions
 {
     public interface ICursorInfoRepository

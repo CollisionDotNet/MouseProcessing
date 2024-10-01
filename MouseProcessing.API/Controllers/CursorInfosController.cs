@@ -11,22 +11,22 @@ namespace MouseProcessing.API.Controllers
     public class ContactsController : ControllerBase
     {
         private readonly ICursorInfoService _service;
-        public ContactsController(ICursorInfoService service)
+        private readonly CursorInfoCreateDtoMapper _mapper;
+        public ContactsController(ICursorInfoService service, CursorInfoCreateDtoMapper mapper)
         {
             _service = service;
+            _mapper = mapper;
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CursorInfoCreateDto cursorInfoToCreateRequest)
         {
-            CursorInfoCreateDtoMapper mapper = new CursorInfoCreateDtoMapper();
-            Guid id = await _service.CreateCursorInfoAsync(mapper.Map(cursorInfoToCreateRequest));
+            Guid id = await _service.CreateCursorInfoAsync(_mapper.Map(cursorInfoToCreateRequest));
             return Ok(id);
         }
         [HttpPost]
         public async Task<IActionResult> CreateRange([FromBody] IEnumerable<CursorInfoCreateDto> cursorInfosToCreateRequest)
         {
-            CursorInfoCreateDtoMapper mapper = new CursorInfoCreateDtoMapper();
-            IEnumerable<Guid> ids = await _service.CreateCursorInfoRangeAsync(cursorInfosToCreateRequest.Select(mapper.Map));
+            IEnumerable<Guid> ids = await _service.CreateCursorInfoRangeAsync(cursorInfosToCreateRequest.Select(_mapper.Map));
             return Ok(ids);
         }
         [HttpGet]

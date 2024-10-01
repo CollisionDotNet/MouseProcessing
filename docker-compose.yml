@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  mouseprocessing.api:
+    image: ${DOCKER_REGISTRY-}mouseprocessing.api
+    build:
+      context: .
+      dockerfile: MouseProcessing.API/Dockerfile
+    ports:
+      - 5000:5000
+    depends_on:
+      mouseprocessing.database:
+        condition: service_healthy
+
+  mouseprocessing.database:
+    container_name: mouseprocessing.database
+    build: 
+      context: .
+      dockerfile: sqlserver/Dockerfile
+    environment:
+      - MSSQL_SA_PASSWORD=CursorDbPassword1!
+      - ACCEPT_EULA=Y
+    ports:
+      - 1433:1433
+    volumes:
+      - ./sqlserver/data:/var/opt/mssql/data
+      - ./sqlserver/log:/var/opt/mssql/log

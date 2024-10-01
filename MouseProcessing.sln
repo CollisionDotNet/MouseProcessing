@@ -3,18 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Domain", "MouseProcessing.Domain\MouseProcessing.Domain.csproj", "{AE5B5259-0E62-4E65-9BEE-1CF527C05F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseProcessing.Domain", "MouseProcessing.Domain\MouseProcessing.Domain.csproj", "{AE5B5259-0E62-4E65-9BEE-1CF527C05F18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Application", "MouseProcessing.Application\MouseProcessing.Application.csproj", "{B8D60E72-527C-4AF1-9360-4C5B62CD9215}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseProcessing.Application", "MouseProcessing.Application\MouseProcessing.Application.csproj", "{B8D60E72-527C-4AF1-9360-4C5B62CD9215}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Infrastructure", "MouseProcessing.Infrastructure\MouseProcessing.Infrastructure.csproj", "{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseProcessing.Infrastructure", "MouseProcessing.Infrastructure\MouseProcessing.Infrastructure.csproj", "{1ACF137E-79A7-4DCE-96A0-D2223F46C5CF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A1A0F9BB-DA70-4A7C-A38D-AC050C0DE9DE}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.API", "MouseProcessing.API\MouseProcessing.API.csproj", "{A7BB4B04-A63A-4476-8655-9190988B2D31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MouseProcessing.API", "MouseProcessing.API\MouseProcessing.API.csproj", "{A7BB4B04-A63A-4476-8655-9190988B2D31}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4DAB6639-DBCC-4148-84CC-73F6A73EA534}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +40,10 @@ Global
 		{A7BB4B04-A63A-4476-8655-9190988B2D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7BB4B04-A63A-4476-8655-9190988B2D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7BB4B04-A63A-4476-8655-9190988B2D31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DAB6639-DBCC-4148-84CC-73F6A73EA534}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DAB6639-DBCC-4148-84CC-73F6A73EA534}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DAB6639-DBCC-4148-84CC-73F6A73EA534}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DAB6639-DBCC-4148-84CC-73F6A73EA534}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -56,9 +56,8 @@ namespace MouseProcessing.Infrastructure.Repositories
         public async Task<IEnumerable<CursorInfo?>> GetRangeAsync(IEnumerable<Guid> ids)
         {
             return await _context.CursorInfos
-                .AsNoTracking()
-                .Where(e => ids.Contains(e.Id))              
-                .Select(e => _mapper.Map(e))
+                .AsNoTracking()          
+                .Select(e => ids.Contains(e.Id) ? _mapper.Map(e) : null)
                 .ToListAsync();
         }
     }

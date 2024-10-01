@@ -9,7 +9,7 @@ namespace MouseProcessing.Infrastructure
         public DbSet<CursorInfoEntity> CursorInfos { get; set; } = null!;
         public CursorDBContext(DbContextOptions<CursorDBContext> options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

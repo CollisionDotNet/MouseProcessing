@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Domain", "MouseProcessing.Domain\MouseProcessing.Domain.csproj", "{AE5B5259-0E62-4E65-9BEE-1CF527C05F18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MouseProcessing.Application", "MouseProcessing.Application\MouseProcessing.Application.csproj", "{B8D60E72-527C-4AF1-9360-4C5B62CD9215}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE5B5259-0E62-4E65-9BEE-1CF527C05F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE5B5259-0E62-4E65-9BEE-1CF527C05F18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE5B5259-0E62-4E65-9BEE-1CF527C05F18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D60E72-527C-4AF1-9360-4C5B62CD9215}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

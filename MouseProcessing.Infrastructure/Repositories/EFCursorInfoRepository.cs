@@ -1,16 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MouseProcessing.Domain.Abstractions;
+using MouseProcessing.Domain.BaseTypes;
 using MouseProcessing.Domain.Entities;
 using MouseProcessing.Infrastructure.Entities;
-using MouseProcessing.Infrastructure.Mappers;
 
 namespace MouseProcessing.Infrastructure.Repositories
 {
     public class EFCursorInfoRepository : ICursorInfoRepository
     {
         private readonly CursorDBContext _context;
-        private readonly CursorInfoEntityMapper _mapper;
-        public EFCursorInfoRepository(CursorDBContext context, CursorInfoEntityMapper mapper) 
+        private readonly IMapper<CursorInfo, CursorInfoEntity> _mapper;
+        public EFCursorInfoRepository(CursorDBContext context, IMapper<CursorInfo, CursorInfoEntity> mapper) 
         { 
             _context = context;
             _mapper = mapper;

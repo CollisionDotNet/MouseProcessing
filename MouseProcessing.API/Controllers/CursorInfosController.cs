@@ -3,6 +3,7 @@ using MouseProcessing.Domain.Abstractions;
 using MouseProcessing.Domain.Entities;
 using MouseProcessing.API.Dtos;
 using MouseProcessing.API.Mappers;
+using MouseProcessing.Domain.BaseTypes;
 
 namespace MouseProcessing.API.Controllers
 {
@@ -11,22 +12,22 @@ namespace MouseProcessing.API.Controllers
     public class ContactsController : ControllerBase
     {
         private readonly ICursorInfoService _service;
-        private readonly CursorInfoCreateDtoMapper _mapper;
-        public ContactsController(ICursorInfoService service, CursorInfoCreateDtoMapper mapper)
+        private readonly IMapper<CursorInfo, CursorInfoCreateDto> _cursorInfoCreateDtoMapper;
+        public ContactsController(ICursorInfoService service, IMapper<CursorInfo, CursorInfoCreateDto> cursorInfoCreateDtoMapper)
         {
             _service = service;
-            _mapper = mapper;
+            _cursorInfoCreateDtoMapper = cursorInfoCreateDtoMapper;
         }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CursorInfoCreateDto cursorInfoToCreateRequest)
         {
-            Guid id = await _service.CreateCursorInfoAsync(_mapper.Map(cursorInfoToCreateRequest));
+            Guid id = await _service.CreateCursorInfoAsync(_cursorInfoCreateDtoMapper.Map(cursorInfoToCreateRequest));
             return Ok(id);
         }
         [HttpPost]
         public async Task<IActionResult> CreateRange([FromBody] IEnumerable<CursorInfoCreateDto> cursorInfosToCreateRequest)
         {
-            IEnumerable<Guid> ids = await _service.CreateCursorInfoRangeAsync(cursorInfosToCreateRequest.Select(_mapper.Map));
+            IEnumerable<Guid> ids = await _service.CreateCursorInfoRangeAsync(cursorInfosToCreateRequest.Select(_cursorInfoCreateDtoMapper.Map));
             return Ok(ids);
         }
         [HttpGet]

@@ -30,13 +30,13 @@ namespace MouseProcessing.API.Controllers
             return Ok(ids);
         }
         [HttpGet]
-        public async Task<IActionResult> Get([FromBody] CursorInfoGetDto request)
+        public async Task<IActionResult> Get([FromQuery] CursorInfoGetDto request)
         {
             CursorInfo? cursorInfo = await _service.GetCursorInfoAsync(request.Id);
             return Ok(cursorInfo);
         }
         [HttpGet]
-        public async Task<IActionResult> GetRange([FromBody] IEnumerable<CursorInfoGetDto> cursorInfosToGetRequest)
+        public async Task<IActionResult> GetRange([FromQuery] IEnumerable<CursorInfoGetDto> cursorInfosToGetRequest)
         {
             IEnumerable<CursorInfo?> cursorInfos = await _service.GetCursorInfoRangeAsync(cursorInfosToGetRequest.Select(dto => dto.Id));
             return Ok(cursorInfos);

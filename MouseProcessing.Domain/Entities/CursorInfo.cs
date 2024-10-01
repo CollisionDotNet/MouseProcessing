@@ -2,7 +2,7 @@
 
 namespace MouseProcessing.Domain.Entities
 {
-    public class CursorPosition : IEntity
+    public class CursorInfo : IEntity
     {
         public Guid Id { get; }
         public int X { get; }

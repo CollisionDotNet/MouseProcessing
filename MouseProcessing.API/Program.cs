@@ -1,4 +1,12 @@
 
+using MouseProcessing.Domain.Abstractions;
+using MouseProcessing.Domain.BaseTypes;
+using MouseProcessing.Domain.Entities;
+using MouseProcessing.Application.Services;
+using MouseProcessing.Infrastructure.Entities;
+using MouseProcessing.Infrastructure.Mappers;
+using MouseProcessing.Infrastructure.Repositories;
+
 namespace MouseProcessing.API
 {
     public class Program
@@ -7,16 +15,17 @@ namespace MouseProcessing.API
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.AddScoped<ICursorInfoService, CursorInfoService>();
+            builder.Services.AddScoped<ICursorInfoRepository, EFCursorInfoRepository>();
+            builder.Services.AddScoped<IMapper<CursorInfo, CursorInfoEntity>, CursorInfoEntityMapper>();
+
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

@@ -8,6 +8,8 @@ using MouseProcessing.Infrastructure.Mappers;
 using MouseProcessing.Infrastructure.Repositories;
 using MouseProcessing.API.Mappers;
 using MouseProcessing.API.Dtos;
+using Microsoft.EntityFrameworkCore;
+using MouseProcessing.Infrastructure;
 
 namespace MouseProcessing.API
 {
@@ -26,6 +28,12 @@ namespace MouseProcessing.API
             builder.Services.AddScoped<ICursorInfoRepository, EFCursorInfoRepository>();
             builder.Services.AddScoped<IMapper<CursorInfo, CursorInfoEntity>, CursorInfoEntityMapper>();
             builder.Services.AddScoped<IMapper<CursorInfo, CursorInfoCreateDto>, CursorInfoCreateDtoMapper>();
+
+            string? cursorDBConnectionString = builder.Configuration.GetConnectionString(nameof(CursorDBContext));
+            builder.Services.AddDbContext<CursorDBContext>(options =>
+            {
+                options.UseSqlServer(cursorDBConnectionString);
+            });
 
             var app = builder.Build();
 

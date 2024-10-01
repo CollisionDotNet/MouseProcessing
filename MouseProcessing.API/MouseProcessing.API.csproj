@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MouseProcessing.Application\MouseProcessing.Application.csproj" />
     <ProjectReference Include="..\MouseProcessing.Domain\MouseProcessing.Domain.csproj" />
+    <ProjectReference Include="..\MouseProcessing.Infrastructure\MouseProcessing.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -35,6 +35,16 @@ namespace MouseProcessing.API
                 options.UseSqlServer(cursorDBConnectionString);
             });
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.WithOrigins("http://localhost:5000");
+                    policy.AllowAnyHeader();
+                    policy.AllowAnyMethod();
+                });
+            });
+
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
@@ -43,9 +53,8 @@ namespace MouseProcessing.API
                 app.UseSwaggerUI();
             }
 
+            app.UseCors();
             app.UseAuthorization();
-
-
             app.MapControllers();
 
             app.Run();

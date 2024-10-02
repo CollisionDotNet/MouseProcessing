@@ -2,12 +2,15 @@ version: '3.4'
 
 services:
   mouseprocessing.api:
+    container_name: mouseprocessing.api
     image: ${DOCKER_REGISTRY-}mouseprocessing.api
     build:
       context: .
       dockerfile: MouseProcessing.API/Dockerfile
     ports:
       - 8080:8080
+    networks:
+      - mouseprocessingnetwork
     depends_on:
       mouseprocessing.database:
         condition: service_healthy
@@ -22,6 +25,22 @@ services:
       - ACCEPT_EULA=Y
     ports:
       - 1433:1433
+    networks:
+      - mouseprocessingnetwork
     volumes:
       - ./sqlserver/data:/var/opt/mssql/data
       - ./sqlserver/log:/var/opt/mssql/log
+
+  mouseprocessing.client:
+    container_name: mouseprocessing.client
+    image: ${DOCKER_REGISTRY-}mouseprocessing.client
+    build:
+      context: .
+      dockerfile: MouseProcessing.Client/Dockerfile
+    ports:
+      - 5000:5000
+    networks:
+      - mouseprocessingnetwork
+
+networks:
+  mouseprocessingnetwork:

@@ -3,8 +3,13 @@
     "Docker Compose": {
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "mouseprocessing.client",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}",
       "serviceActions": {
-        "mouseprocessing.api": "StartDebugging"
+        "mouseprocessing.api": "StartDebugging",
+        "mouseprocessing.database": "StartWithoutDebugging",
+        "mouseprocessing.client": "StartDebugging"
       }
     }
   }

@@ -10,6 +10,8 @@ Web-приложение для сбора информации об измен�
 
 Рабочая директория: [/MouseProcessing.Client](MouseProcessing.Client).
 
+Для отправки запроса использована библиотека [axios](https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js).
+
 Порты контейнера mouseprocessing.client в Docker: 5000:5000.
 
 ### backend 

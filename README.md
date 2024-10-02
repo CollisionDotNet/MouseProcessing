@@ -18,10 +18,11 @@ Web-приложение для сбора информации об измен�
 Реализован в виде ASP.NET Core Web API приложения, который принимает собранные данные, сохраняет их в базу и возвращает результат операции. Спроектирован согласно принципам DDD и Clean Architecture. 
 
 Рабочие директории определены на основе деления проекта на слои по Clean Architecture:
-[/MouseProcessing.Domain](MouseProcessing.Domain)
-[/MouseProcessing.Application](MouseProcessing.Application)
-[/MouseProcessing.Infrastructure](MouseProcessing.Infrastructure)
-[/MouseProcessing.API](MouseProcessing.API)
+
+* [/MouseProcessing.Domain](MouseProcessing.Domain)
+* [/MouseProcessing.Application](MouseProcessing.Application)
+* [/MouseProcessing.Infrastructure](MouseProcessing.Infrastructure)
+* [/MouseProcessing.API](MouseProcessing.API)
 
 С методами-действиями контроллера по работе с REST API запросами можно ознакомиться в Swagger.
 
